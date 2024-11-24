@@ -55,7 +55,7 @@
         filter = filter.toLowerCase()
         return (file) => {
           const filePath = file.path;
-          const fileName = filePath.replace('.md', '').toLowerCase().replace(/-/g, '');
+          const fileName = filePath.replace('.mdx', '').toLowerCase().replace(/-/g, '');
           const isMarkdown = (/.md$/).test(filePath);
           const isPDF = (/.pdf$/).test(filePath);
           const isNotLicense = filePath !== 'LICENSE.md';
