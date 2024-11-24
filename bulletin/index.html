@@ -66,7 +66,7 @@
       }
       // Match by closest to start of word then earliest word
       const matchScore = (file, filter) => {
-        const fileWords = file.name.replace('.md', '').toLowerCase().split('-');
+        const fileWords = file.name.replace('.mdx', '').toLowerCase().split('-');
         filter = filter.toLowerCase()
         let wordIndex;
         let letterPosition;
@@ -90,7 +90,7 @@
       const updateList = (data, filter = '') => {
         let htmlString = '';
         for (let file of data.filter(filterFiles(filter)).sort(sortFiles(filter))) {
-          const fileName = file.path.replace('.md', '');
+          const fileName = file.path.replace('.mdx', '');
           const fileDisplayName = fileName.split('-').join(' ');
           htmlString += `<li><a href="/bfumc/${fileName}">${fileDisplayName}</a></li>`;
         }
@@ -100,7 +100,7 @@
       const navigateToFile = (data, filter = '') => {
         files = data.filter(filterFiles(filter));
         if (files.length === 1) {
-          const fileName = files[0].path.replace('.md', '');
+          const fileName = files[0].path.replace('.mdx', '');
           document.location = fileName;
         }
       }
